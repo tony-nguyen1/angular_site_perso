@@ -1,1 +1,5 @@
-<p>portfolio works!</p>
+<app-filtre [lang]="lang"></app-filtre>
+<div *ngFor="let unProjet of projets">
+  <app-projet [projet]="unProjet">
+  </app-projet>
+</div>
