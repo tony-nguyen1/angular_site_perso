@@ -10,6 +10,12 @@
     <img [src]="foo.logo" [alt]="'Logo de '+foo.nom">
   </div>
 </div>
+<p>
+  ICI
+  <span *ngFor="let l of langageFiltre">
+    {{l}}
+  </span>
+</p>
 
 <!-- <div *ngFor="let foo of getProjets().keys()">
     {{getProjets().get(foo)}}

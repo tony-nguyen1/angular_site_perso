@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Lang } from "../lang";
 import { LangService } from "../lang.service";
@@ -10,10 +10,16 @@ import { LangService } from "../lang.service";
 })
 export class FiltreComponent {
   @Input() lang?: Lang[];
+  @Output() newItemEvent = new EventEmitter<Set<string>>();
 
   set: Set<string> = new Set();
 
   show(): void {
-    console.log(this.set);
+    // console.log(this.set);
+    this.addNewItem("test");
   }
+  addNewItem(value: string) {
+    this.newItemEvent.emit(this.set);
+  }
+
 }

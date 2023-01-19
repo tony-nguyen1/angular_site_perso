@@ -1,5 +1,5 @@
-<app-filtre [lang]="lang"></app-filtre>
+<app-filtre [lang]="lang" (newItemEvent)="showME($event)"></app-filtre>
 <div *ngFor="let unProjet of projets">
-  <app-projet [projet]="unProjet" [lang]="lang">
+  <app-projet [projet]="unProjet" [lang]="lang" [langageFiltre]="current">
   </app-projet>
 </div>

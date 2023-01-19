@@ -14,6 +14,8 @@ export class PortfolioComponent implements OnInit {
 
   projets: Projet[] = [];
   lang: Lang[] = []
+  current: Set<string> = new Set();
+  // langFilt=
 
   constructor(private projetService: ProjetService, private langService: LangService) { }
 
@@ -29,5 +31,10 @@ export class PortfolioComponent implements OnInit {
 
   getLang(): void {
     this.lang = this.langService.getLang();
+  }
+
+  showME(newItem: Set<string>) {
+    console.log(newItem);
+    this.current = newItem;
   }
 }

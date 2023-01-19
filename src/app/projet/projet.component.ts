@@ -12,6 +12,7 @@ export class ProjetComponent {
   @Input() projet?: Projet; //| undefined | null = null;
   @Input() lang?: Lang[];// | undefined | null = [];
   test: string = "";
+  @Input() langageFiltre: Set<string> = new Set();
 
   constructor() {
     // test = 
