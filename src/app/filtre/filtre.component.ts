@@ -10,4 +10,10 @@ import { LangService } from "../lang.service";
 })
 export class FiltreComponent {
   @Input() lang?: Lang[];
+
+  set: Set<string> = new Set();
+
+  show(): void {
+    console.log(this.set);
+  }
 }

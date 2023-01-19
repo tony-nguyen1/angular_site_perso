@@ -1,4 +1,8 @@
 <h3>Filtre</h3>
-<p *ngFor="let uneLangue of lang">
-  {{uneLangue.nom}}
-</p>
+<button *ngFor="let uneLangue of lang" [title]="uneLangue.nom"
+  (click)="this.set.has(uneLangue.nom) ? this.set.delete(uneLangue.nom) : this.set.add(uneLangue.nom)"
+  [ngClass]="{'grey':this.set.size!=0 && !this.set.has(uneLangue.nom)}">
+  <!-- {{uneLangue.nom}} -->
+  <img [src]="uneLangue.logo" alt="" [ngClass]="'logo'">
+</button>
+<button (click)="show()"></button>

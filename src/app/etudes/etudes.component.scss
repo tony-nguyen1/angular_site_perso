@@ -1,0 +1,45 @@
+* {
+  margin: 0px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+
+  height: 100%;
+  background-color: #F0F0F0;
+
+  padding: {
+    top: 20px;
+    left: 20px;
+    right: 20px;
+  }
+}
+
+article {
+  background-color: white;
+  border-radius: 30px;
+  height: fit-content;
+  position: relative;
+  padding: 40px;
+}
+
+.date {
+  font-style: italic;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+img {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 64px;
+}
