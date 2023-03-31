@@ -3,16 +3,42 @@ img {
   width: 40px;
 }
 
-article {
-  background-color: white;
-  border-radius: 39px;
-}
+article {}
 
 section {
-  // padding: {
-  //   top: 45px;
-  //   bottom: 30px;
-  //   left: 40px;
-  //   right: 40px
-  // }
+  padding: {
+    top: 45px;
+    bottom: 30px;
+    left: 40px;
+    right: 40px
+  }
+
+  background-color: white;
+  border-radius: 39px;
+  display: flex;
+  row-gap: 18px;
+  flex-direction: column;
+}
+
+.py {
+  border-bottom: 7px solid #3777ad;
+}
+
+.java {
+  border-bottom: 7px solid red;
+}
+
+.angular {
+
+  border-bottom: 7px solid red;
+}
+
+h2 {
+  margin: 0px;
+}
+
+div.imgs {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
 }

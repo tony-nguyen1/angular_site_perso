@@ -36,4 +36,16 @@ export class ProjetComponent {
 
     return techUtilise;
   }
+
+  testClass(): String[] {
+    let surnoms: String[] = [];
+    this.projet?.tech.forEach(langage => {
+      this.lang?.forEach(l2 => {
+        if (langage == l2.nom) {
+          surnoms.push(l2.surnom);
+        }
+      })
+    });
+    return surnoms;
+  }
 }

@@ -1,0 +1,47 @@
+main {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 100%;
+  grid-template-areas: "haut" "bas";
+
+}
+
+.aPropos {
+  grid-area: haut;
+  padding: 6rem 20vw;
+  background-color: #064C9E;
+  color: white;
+
+  h1 {
+    font-size: 74px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 30px;
+    text-align: justify;
+  }
+}
+
+.liens {
+  padding: 8rem 7.375rem;
+  text-align: center;
+}
+
+.contactLien {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  font-size: 5.9vw;
+}
+
+address {
+  display: flex;
+  flex-direction: column;
+  row-gap: 7.375rem;
+}

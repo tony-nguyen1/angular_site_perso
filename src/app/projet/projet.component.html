@@ -1,12 +1,11 @@
 <article>
-  <section>
+  <section [ngClass]="testClass()">
     <H2>
       {{projet?.nom}}
     </H2>
     {{projet?.description}}
-    <img *ngFor="let uneTech of projet?.tech" [alt]="uneTech">
 
-    <div>
+    <div class="imgs">
       <div *ngFor="let foo of getProjets()">
         <!-- {{foo.nom}} {{foo.surnom}} {{foo.logo}} -->
         <img [src]="foo.logo" [alt]="'Logo de '+foo.nom">
