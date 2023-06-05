@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 html {
   height: 100%;
+  font-family: "Inria Sans";
 }
 
 body {
@@ -40,4 +41,17 @@ app-root {
 
 html {
   font-family: "Inria Sans";
+}
+
+:root {
+  --main-orange-color: #FAA43F;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
 }

@@ -8,6 +8,7 @@ import { ExperienceComponent } from "./experience/experience.component";
 import { PortfolioComponent } from "./portfolio/portfolio.component";
 
 const routes: Routes = [
+  { path: '', component: AccueilComponent },
   { path: 'accueil', component: AccueilComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'etudes', component: EtudesComponent },

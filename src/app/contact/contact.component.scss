@@ -45,3 +45,63 @@ address {
   flex-direction: column;
   row-gap: 7.375rem;
 }
+
+@media (min-width: 700px) {
+  main {
+    height: 100%;
+    grid-template-rows: 100%;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-areas: "haut bas";
+  }
+
+  .contactLien {
+    font-size: 1.948051948vw;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+
+    img {
+      width: 9.75rem;
+      margin-right: 62px;
+    }
+
+  }
+
+  .aPropos,
+  .liens {
+    padding: 8rem 7.375rem;
+  }
+
+  .aPropos {
+    font-size: 45px;
+    // margin-bottom: 6.25rem;
+    // padding-bottom: 0px;
+
+    h1 {
+      font-size: clamp(66px, 17.6vw, 92px);
+      margin-bottom: 1.0869em;
+      text-align: left;
+    }
+
+    p {
+      font-size: 45px;
+      margin-bottom: 6.25rem;
+      text-align: justify;
+    }
+  }
+
+  .bouttonNeobrutal {
+    border: 7px solid black;
+    width: 3.488em;
+    height: 1.682em;
+    background-color: var(--main-orange-color);
+    font-size: 88px;
+    color: black;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 7px 7px black;
+  }
+
+}
