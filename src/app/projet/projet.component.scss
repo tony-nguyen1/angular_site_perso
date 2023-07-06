@@ -29,7 +29,6 @@ section {
 }
 
 .angular {
-
   border-bottom: 7px solid red;
 }
 
@@ -41,4 +40,21 @@ div.imgs {
   display: flex;
   flex-direction: row;
   column-gap: 10px;
+}
+
+@media (min-width: 700px) {
+  .py {
+    border-left: 7px solid #3777ad;
+    border-bottom: 0px;
+  }
+
+  .java {
+    border-left: 7px solid red;
+    border-bottom: 0px;
+  }
+
+  .angular {
+    border-left: 7px solid red;
+    border-bottom: 0px;
+  }
 }

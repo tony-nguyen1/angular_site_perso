@@ -13,7 +13,8 @@ body {
 
 app-root {
   display: grid;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: min-content 1fr;
+  grid-template-columns: 100vw;
   grid-template-areas: "header"
     "main";
   width: 100%;
@@ -26,6 +27,7 @@ app-root {
 
   router-outlet+* {
     grid-area: main;
+    background-color: var(--main-bg-color);
   }
 
   // app-accueil {
@@ -44,7 +46,15 @@ html {
 }
 
 :root {
+  --main-bg-color: #F0F0F0;
   --main-orange-color: #FAA43F;
+  --not-active-link-color: #8a8a8a;
+  --hover-link-color: #696969;
+  --nav-font-size: clamp(20px, 2.96875vw, 56px);
+  --nav-column-gap: 60px;
+  --padding-horizontal: 70px;
+  --button-size: 64px;
+
 }
 
 a {
@@ -54,4 +64,8 @@ a {
 * {
   margin: 0px;
   padding: 0px;
+}
+
+header {
+  background-color: var(--main-bg-color);
 }

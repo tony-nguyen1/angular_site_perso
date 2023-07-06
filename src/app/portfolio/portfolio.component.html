@@ -1,13 +1,15 @@
-<app-filtre [lang]="lang" (newItemEvent)="showME($event)"></app-filtre>
-<article>
-  <!-- Récupérer le langage utilisé par unProjet et vérifier si current match avec un surnom de langage -->
-  <!-- <div *ngIf="showAProject(unProjet) as value; else elseBlock">
-      This project match with the filter {{value}}
-    </div>
-    <ng-template #elseBlock>
-      This project does not match with the filter
-    </ng-template> -->
-  <app-projet *ngFor="let unProjet of projets" [projet]="unProjet" [lang]="lang" [langageFiltre]="current"
-    [ngClass]="{'hidden':current.size!=0&&!showAProject(unProjet)}">
-  </app-projet>
-</article>
+<main>
+  <app-filtre [lang]="lang" (newItemEvent)="showME($event)"></app-filtre>
+  <article>
+    <!-- Récupérer le langage utilisé par unProjet et vérifier si current match avec un surnom de langage -->
+    <!-- <div *ngIf="showAProject(unProjet) as value; else elseBlock">
+        This project match with the filter {{value}}
+      </div>
+      <ng-template #elseBlock>
+        This project does not match with the filter
+      </ng-template> -->
+    <app-projet *ngFor="let unProjet of projets" [projet]="unProjet" [lang]="lang" [langageFiltre]="current"
+      [ngClass]="{'hidden':current.size!=0&&!showAProject(unProjet)}">
+    </app-projet>
+  </article>
+</main>

@@ -2,7 +2,7 @@
   display: none;
 }
 
-:host {
+main {
   background-color: #F0F0F0;
   display: grid;
   grid-template-rows: auto 1fr;
@@ -13,10 +13,23 @@
   overflow-x: hidden;
   row-gap: 35px;
   padding: 20px;
+  padding-left: var(--padding-horizontal);
+  padding-right: var(--padding-horizontal);
 }
 
 article {
   display: flex;
   flex-direction: column;
   row-gap: 90px;
+}
+
+@media (min-width: 700px) {
+  main {
+    grid-template-columns: 1fr 11fr;
+    grid-template-areas:
+      "filtre carte";
+    column-gap: 20px;
+    row-gap: 140px;
+    // overflow-x: hidden;
+  }
 }
