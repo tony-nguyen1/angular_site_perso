@@ -18,6 +18,16 @@ section {
   display: flex;
   row-gap: 18px;
   flex-direction: column;
+
+  position: relative;
+
+  h2 {
+    position: absolute;
+    top: -0.75em;
+    font-size: 96px;
+    margin-top: 0px;
+    white-space: nowrap;
+  }
 }
 
 .py {

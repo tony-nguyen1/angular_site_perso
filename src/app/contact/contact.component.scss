@@ -46,6 +46,24 @@ address {
   row-gap: 7.375rem;
 }
 
+.bouttonNeobrutal {
+  border: 7px solid black;
+  width: 2.9em;
+  height: 1.682em;
+  background-color: var(--main-orange-color);
+  font-size: 88px;
+  color: black;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 7px 7px black;
+}
+
+.aPropos img {
+  height: 5.875rem;
+}
+
 @media (min-width: 700px) {
   main {
     height: 100%;
@@ -88,20 +106,24 @@ address {
       margin-bottom: 6.25rem;
       text-align: justify;
     }
+
+    img {
+      height: 5.875rem;
+    }
   }
 
   .bouttonNeobrutal {
-    border: 7px solid black;
+    // border: 7px solid black;
     width: 3.488em;
-    height: 1.682em;
-    background-color: var(--main-orange-color);
-    font-size: 88px;
-    color: black;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-evenly;
-    align-items: center;
-    box-shadow: 7px 7px black;
+    // height: 1.682em;
+    // background-color: var(--main-orange-color);
+    // font-size: 88px;
+    // color: black;
+    // display: flex;
+    // flex-flow: row;
+    // justify-content: space-evenly;
+    // align-items: center;
+    // box-shadow: 7px 7px black;
   }
 
 }

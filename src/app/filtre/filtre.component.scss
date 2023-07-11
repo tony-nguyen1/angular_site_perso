@@ -28,11 +28,16 @@ button {
   text-align: center;
 
   padding: {
-    top: 2px;
+    top: 20px;
     bottom: 10px;
   }
 
   border-radius: 23px;
+
+  position: sticky;
+  top: 20px;
+  z-index: 1;
+
 }
 
 h3 {

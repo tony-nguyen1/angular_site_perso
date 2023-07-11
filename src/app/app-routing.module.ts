@@ -8,7 +8,7 @@ import { ExperienceComponent } from "./experience/experience.component";
 import { PortfolioComponent } from "./portfolio/portfolio.component";
 
 const routes: Routes = [
-  { path: '', component: AccueilComponent },
+  // { path: '', component: AccueilComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' }, // redirect to `first-component`
   { path: 'accueil', component: AccueilComponent },
   { path: 'contact', component: ContactComponent },
