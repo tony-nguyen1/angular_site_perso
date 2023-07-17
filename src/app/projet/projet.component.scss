@@ -27,6 +27,7 @@ section {
     font-size: 96px;
     margin-top: 0px;
     white-space: nowrap;
+    font-size: 39px;
   }
 }
 
@@ -66,5 +67,11 @@ div.imgs {
   .angular {
     border-left: 7px solid red;
     border-bottom: 0px;
+  }
+
+  section {
+    h2 {
+      font-size: 96px;
+    }
   }
 }

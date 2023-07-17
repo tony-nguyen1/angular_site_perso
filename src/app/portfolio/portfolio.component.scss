@@ -14,8 +14,6 @@ main {
   row-gap: 70px;
   padding: 20px;
   // padding-top: 140px;
-  padding-left: var(--padding-horizontal);
-  padding-right: var(--padding-horizontal);
 }
 
 article {
@@ -33,5 +31,7 @@ article {
     // row-gap: 140px;
     padding-top: 140px;
     // overflow-x: hidden;
+    padding-left: var(--padding-horizontal);
+    padding-right: var(--padding-horizontal);
   }
 }

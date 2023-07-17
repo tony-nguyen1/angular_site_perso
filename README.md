@@ -31,3 +31,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 'ng build --output-path docs'
 Puis aller dans Settings > Pages. Ensuite changer /root en /docs dans Branches.
+
+https://stackoverflow.com/questions/63862046/angular-get-404-after-reload-with-github-page
