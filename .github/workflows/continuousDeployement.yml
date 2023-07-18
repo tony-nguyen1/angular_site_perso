@@ -58,6 +58,7 @@ jobs:
             echo here
             cat ./ssh_key.txt
             echo there
+            chmod 400 ./shh_key.txt
             ssh-add -v ./ssh_key.txt
             echo beep
             ssh-add -l
