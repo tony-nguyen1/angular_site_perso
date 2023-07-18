@@ -76,6 +76,8 @@ jobs:
         - name: Checking
           run : |
             pwd
+            ls
+            cd ./my_website
             git status
             ls -aR
             cd ../
@@ -83,11 +85,13 @@ jobs:
             ls
         - name: Adding everything
           run : |
+            cd ./my_website
             git status
             git add .
             git status
         - name: Pushing
           run : |
+            cd my_website
             git commit -m "deploy"
             git branch -M main
             git remote add origin git@github.com:tony-nguyen1/tony-nguyen1.github.io.git
