@@ -45,6 +45,7 @@ jobs:
           run: |
             git init
             git config --global user.name "Mr.Beep-Boop"
+            eval "$(ssh-agent -s)"
             ssh-add {{ SSH_DEPLOY_KEY }}
         
         - name: Checking
