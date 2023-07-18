@@ -57,7 +57,7 @@ jobs:
             eval "$(ssh-agent -s)"
             # echo $SSH_KEY
             # pwd
-            ssh-add -l
+            # ssh-add -l
             # pwd
             # echo $SSH_KEY >> ssh_key.txt
             # echo here
