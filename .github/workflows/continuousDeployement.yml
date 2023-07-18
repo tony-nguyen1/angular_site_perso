@@ -21,13 +21,13 @@ jobs:
         npm install
         ng build --optimization --output-path docs #--base-href /tony-nguyen1.github.io/
         cp docs/index.html docs/404.html
+        ls -R docs/
+
     - name: Saving the output
       uses: actions/upload-artifact@v1
       with:
         name: my_website
         path: docs/
-    - name: Checking
-      run : ls -R docs/
        
         
   deploy:
@@ -37,6 +37,7 @@ jobs:
     needs: build
    
     steps:
+
         - name: Download build
           uses: actions/download-artifact@v1
           with:
@@ -48,73 +49,35 @@ jobs:
             ssh-private-key: ${{ secrets.SSH_DEPLOY_KEY }}
 
         - name: Initialize git repository
-          env: 
-            SSH_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
           run: |
+            pwd
             ls
+            echo "Changing directory"
             cd ./my_website
-            git init
+            pwd
+            ls
+            echo "Setting git identity"
             git config --global user.name "Mr.Beep-Boop"
             git config --global user.email "nguyentoony@gmail.com"
             git config --list
+            echo "Initialazing repository"
+            git init
+            git branch -M main
+            git remote add deploy_site git@github.com:tony-nguyen1/tony-nguyen1.github.io.git
+            git remote -v
+            echo "ssh-agent:"
             eval "$(ssh-agent -s)"
-            # echo $SSH_KEY
-            # pwd
-            # ssh-add -l
-            # pwd
-            # echo $SSH_KEY >> ssh_key.txt
-            # echo here
-            # cat ./ssh_key.txt
-            # echo there
-            # echo "Changing acces permissions"
-            # chmod 600 ./ssh_key.txt
-            # echo "Adding key file"
-            # ssh-add -v ./ssh_key.txt
-            # echo beep
-            # ssh-add -l
-            # echo boop
 
-        - name: Checking
-          run : |
-            pwd
-            ls
-            cd ./my_website
-            git status
-            ls -aR
-            cd ../
-            pwd
-            ls
-        - name: Adding everything
+        - name: Adding all files
           run : |
             cd ./my_website
             git status
             git add .
             git status
+            git commit -m "deploy"
+            git status
+
         - name: Pushing
           run : |
             cd my_website
-            git commit -m "deploy"
-            git branch -M main
-            git remote add origin git@github.com:tony-nguyen1/tony-nguyen1.github.io.git
-            git push -u origin main --force
-            
-        # - name: Deploy to GitHub Pages
-        #   uses: JamesIves/github-pages-deploy-action@releases/v4
-        #   with:
-        #     token: ${{ secrets.GITHUB_TOKEN }}
-        #     branch: main
-        #     folder: my_website
-        #     repository-name: tony-nguyen1/tony-nguyen1.github.io
-        #     git-config-name: beep-boop
-        #     commit-message: "automatic deployment"
-        #     single-commit: true 
-        # - name: Pushes to another repository
-        #   uses: cpina/github-action-push-to-another-repository@main
-        #   env:
-        #   # SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
-        #     API_TOKEN_GITHUB: ${{ secrets.SSH_DEPLOY_KEY }}
-        #   with:
-        #     source-directory: 'my_website'
-        #     destination-github-username: 'tony-nguyen1'
-        #     destination-repository-name: 'tony-nguyen1.github.io'
-
+            git push -u deploy_site main --force
