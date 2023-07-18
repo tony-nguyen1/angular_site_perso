@@ -52,7 +52,8 @@ jobs:
             echo $SSH_KEY
             ssh-add -l
             echo $SSH_KEY >> ssh_key.txt
-            ssh-add ./ssh_key.txt
+            cat ./ssh_key.txt
+            ssh-add -v ./ssh_key.txt
             ssh-add -l
 
         - name: Checking
