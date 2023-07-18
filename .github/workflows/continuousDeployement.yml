@@ -51,7 +51,7 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             BRANCH: main
             FOLDER: my_website
-            REPOSITORY-NAME: tony-nguyen1/tony-nguyen1.github.io
+            REPOSITORY_NAME: tony-nguyen1/tony-nguyen1.github.io
             GIT_CONFIG_NAME: beep-boop
             COMMIT_MESSAGE: "automatic deployment"
             SINGLE_COMMIT: true 
