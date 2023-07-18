@@ -48,7 +48,8 @@ jobs:
         - name: Checking
           run : |
             pwd
-            ls -R
+            git status
+            ls -aR
             cd ../
             pwd
             ls
