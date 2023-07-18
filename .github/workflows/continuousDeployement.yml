@@ -13,7 +13,7 @@ jobs:
     
     steps:
     
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     
     - name: Building website
       run : |
@@ -40,6 +40,10 @@ jobs:
           uses: actions/download-artifact@v1
           with:
             name: my_website
+
+        - name: Initialize git repository
+          run: |
+            git init
         
         - name: Checking
           run : |
@@ -54,7 +58,7 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             BRANCH: main
             FOLDER: my_website
-            REPOSITORY_NAME: tony-nguyen1/tony-nguyen1.github.io
-            GIT_CONFIG_NAME: beep-boop
-            COMMIT_MESSAGE: "automatic deployment"
-            SINGLE_COMMIT: true 
+            repository-name: tony-nguyen1/tony-nguyen1.github.io
+            git-config-name: beep-boop
+            commit-message: "automatic deployment"
+            single-commit: true 
