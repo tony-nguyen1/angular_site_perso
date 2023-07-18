@@ -55,9 +55,9 @@ jobs:
         - name: Deploy to GitHub Pages
           uses: JamesIves/github-pages-deploy-action@releases/v4
           with:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            BRANCH: main
-            FOLDER: my_website
+            token: ${{ secrets.GITHUB_TOKEN }}
+            branch: main
+            folder: my_website
             repository-name: tony-nguyen1/tony-nguyen1.github.io
             git-config-name: beep-boop
             commit-message: "automatic deployment"
