@@ -41,6 +41,11 @@ jobs:
           with:
             name: my_website
 
+        - name: Adding ssh-key
+          uses: webfactory/ssh-agent@v0.7.0
+          with:
+            ssh-private-key: ${{ secrets.SSH_DEPLOY_KEY }}
+
         - name: Initialize git repository
           env: 
             SSH_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
@@ -50,21 +55,21 @@ jobs:
             git config --global user.email "nguyentoony@gmail.com"
             git config --list
             eval "$(ssh-agent -s)"
-            echo $SSH_KEY
-            pwd
-            # ssh-add -l
-            pwd
-            echo $SSH_KEY >> ssh_key.txt
-            echo here
-            cat ./ssh_key.txt
-            echo there
-            echo "Changing acces permissions"
-            chmod 600 ./ssh_key.txt
-            echo "Adding key file"
-            ssh-add -v ./ssh_key.txt
-            echo beep
+            # echo $SSH_KEY
+            # pwd
             ssh-add -l
-            echo boop
+            # pwd
+            # echo $SSH_KEY >> ssh_key.txt
+            # echo here
+            # cat ./ssh_key.txt
+            # echo there
+            # echo "Changing acces permissions"
+            # chmod 600 ./ssh_key.txt
+            # echo "Adding key file"
+            # ssh-add -v ./ssh_key.txt
+            # echo beep
+            # ssh-add -l
+            # echo boop
 
         - name: Checking
           run : |
