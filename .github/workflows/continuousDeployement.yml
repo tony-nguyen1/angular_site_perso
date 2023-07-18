@@ -19,7 +19,7 @@ jobs:
       run : |
         npm -g install -g @angular/cli
         npm install
-        ng build --optimization --output-path docs --base-href /tony-nguyen1.github.io/
+        ng build --optimization --output-path docs #--base-href /tony-nguyen1.github.io/
     - name: Saving the output
       uses: actions/upload-artifact@v1
       with:
