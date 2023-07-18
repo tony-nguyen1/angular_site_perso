@@ -48,13 +48,18 @@ jobs:
             git init
             git config --global user.name "Mr.Beep-Boop"
             git config --global user.email "nguyentoony@gmail.com"
+            git config --list
             eval "$(ssh-agent -s)"
             echo $SSH_KEY
             ssh-add -l
             echo $SSH_KEY >> ssh_key.txt
+            echo here
             cat ./ssh_key.txt
+            echo there
             ssh-add -v ./ssh_key.txt
+            echo beep
             ssh-add -l
+            echo boop
 
         - name: Checking
           run : |
