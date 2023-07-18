@@ -1,0 +1,53 @@
+on:
+  push:
+    branches:
+    - main
+    
+jobs:
+  build:
+   
+    runs-on: ubuntu-latest
+    
+    steps:
+    
+    - uses: actions/checkout@v3
+    
+    - name: Building website
+      run : |
+        npm -g install -g @angular/cli
+        npm install
+        ng build --optimization --output-path docs --base-href /tony-nguyen1.github.io/
+    - name: Saving the output
+      uses: actions/upload-artifact@v1
+      with:
+        name: my_website
+        path: docs/
+    - name: Checking
+      run : ls -R docs/
+       
+        
+  deploy:
+  
+    runs-on: ubuntu-latest
+    
+    needs: build
+   
+    steps:
+        - name: Download build
+          uses: actions/download-artifact@v1
+          with:
+            name: my_website
+        
+        - name: Checking
+          run : |
+            pwd
+            ls -R
+            cd ../
+            ls
+            
+        - name: Deploy to GitHub Pages
+          uses: JamesIves/github-pages-deploy-action@releases/v3
+          with:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            BRANCH: main
+            FOLDER: my_website
