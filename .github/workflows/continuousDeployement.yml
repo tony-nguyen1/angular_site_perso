@@ -50,9 +50,9 @@ jobs:
             git config --global user.email "nguyentoony@gmail.com"
             eval "$(ssh-agent -s)"
             echo $SSH_KEY
-            ssh-add lL
+            ssh-add -l
             ssh-add $SSH_KEY
-            ssh-add lL
+            ssh-add -l
 
         - name: Checking
           run : |
