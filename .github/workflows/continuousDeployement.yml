@@ -51,7 +51,8 @@ jobs:
             eval "$(ssh-agent -s)"
             echo $SSH_KEY
             ssh-add -l
-            ssh-add $SSH_KEY
+            echo $SSH_KEY >> ssh_key.txt
+            ssh-add ./ssh_key.txt
             ssh-add -l
 
         - name: Checking
