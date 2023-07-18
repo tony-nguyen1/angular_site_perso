@@ -42,11 +42,13 @@ jobs:
             name: my_website
 
         - name: Initialize git repository
+          env: 
+            SSH_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
           run: |
             git init
             git config --global user.name "Mr.Beep-Boop"
             eval "$(ssh-agent -s)"
-            ssh-add {{ SSH_DEPLOY_KEY }}
+            ssh-add "$SSH_KEY"
         
         - name: Checking
           run : |
