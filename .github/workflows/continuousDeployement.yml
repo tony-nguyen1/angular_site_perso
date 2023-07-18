@@ -50,8 +50,10 @@ jobs:
             git config --global user.email "nguyentoony@gmail.com"
             eval "$(ssh-agent -s)"
             echo $SSH_KEY
-            # ssh-add $SSH_KEY
-        
+            ssh-add lL
+            ssh-add $SSH_KEY
+            ssh-add lL
+
         - name: Checking
           run : |
             pwd
