@@ -50,6 +50,7 @@ jobs:
             pwd
             ls -R
             cd ../
+            pwd
             ls
             
         # - name: Deploy to GitHub Pages
@@ -62,13 +63,13 @@ jobs:
         #     git-config-name: beep-boop
         #     commit-message: "automatic deployment"
         #     single-commit: true 
-        - name: Pushes to another repository
-          uses: cpina/github-action-push-to-another-repository@main
-          env:
-          # SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
-            API_TOKEN_GITHUB: ${{ secrets.SSH_DEPLOY_KEY }}
-          with:
-            source-directory: 'my_website'
-            destination-github-username: 'tony-nguyen1'
-            destination-repository-name: 'tony-nguyen1.github.io'
+        # - name: Pushes to another repository
+        #   uses: cpina/github-action-push-to-another-repository@main
+        #   env:
+        #   # SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+        #     API_TOKEN_GITHUB: ${{ secrets.SSH_DEPLOY_KEY }}
+        #   with:
+        #     source-directory: 'my_website'
+        #     destination-github-username: 'tony-nguyen1'
+        #     destination-repository-name: 'tony-nguyen1.github.io'
 
