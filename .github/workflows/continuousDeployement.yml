@@ -88,7 +88,7 @@ jobs:
           run : |
             git commit -m "deploy"
             git branch -M main
-            git remote add origin git@github.com:tony-nguyen1/tony-nguyen.github.io.git
+            git remote add origin git@github.com:tony-nguyen1/tony-nguyen1.github.io.git
             git push -u origin main --force
             
         # - name: Deploy to GitHub Pages
