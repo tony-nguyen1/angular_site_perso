@@ -44,6 +44,7 @@ jobs:
         - name: Initialize git repository
           run: |
             git init
+            git config --global user.name "Mr.Beep-Boop"
         
         - name: Checking
           run : |
@@ -53,6 +54,17 @@ jobs:
             cd ../
             pwd
             ls
+        - name: Adding everything
+          run : |
+            git status
+            git add .
+            git status
+        - name: Pushing
+          run : |
+            git commit -m "deploy"
+            git branch -M main
+            git remote add origin git@github.com:tony-nguyen1/tony-nguyen.github.io.git
+            git push -u origin main
             
         # - name: Deploy to GitHub Pages
         #   uses: JamesIves/github-pages-deploy-action@releases/v4
