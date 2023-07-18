@@ -50,6 +50,8 @@ jobs:
           env: 
             SSH_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
           run: |
+            ls
+            cd ./my_website
             git init
             git config --global user.name "Mr.Beep-Boop"
             git config --global user.email "nguyentoony@gmail.com"
