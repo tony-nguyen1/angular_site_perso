@@ -51,7 +51,9 @@ jobs:
             git config --list
             eval "$(ssh-agent -s)"
             echo $SSH_KEY
+            pwd
             ssh-add -l
+            pwd
             echo $SSH_KEY >> ssh_key.txt
             echo here
             cat ./ssh_key.txt
