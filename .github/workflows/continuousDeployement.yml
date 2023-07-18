@@ -3,8 +3,10 @@ on:
     branches:
     - main
 
+
 permissions:
   contents: write
+    
     
 jobs:
   build:
@@ -20,7 +22,7 @@ jobs:
         npm -g install -g @angular/cli
         npm install
         ng build --optimization --output-path docs #--base-href /tony-nguyen1.github.io/
-        cp docs/index.html docs/404.html
+        cp -v docs/index.html docs/404.html
         ls -R docs/
 
     - name: Saving the output
@@ -59,10 +61,11 @@ jobs:
             echo "Setting git identity"
             git config --global user.name "Mr.Beep-Boop"
             git config --global user.email "nguyentoony@gmail.com"
+            git config --global init.defaultBranch main
             git config --list
             echo "Initialazing repository"
             git init
-            git branch -M main
+            # git branch -M main
             git remote add deploy_site git@github.com:tony-nguyen1/tony-nguyen1.github.io.git
             git remote -v
             echo "ssh-agent:"
