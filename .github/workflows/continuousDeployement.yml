@@ -45,6 +45,7 @@ jobs:
           run: |
             git init
             git config --global user.name "Mr.Beep-Boop"
+            ssh-add {{ SSH_DEPLOY_KEY }}
         
         - name: Checking
           run : |
@@ -64,7 +65,7 @@ jobs:
             git commit -m "deploy"
             git branch -M main
             git remote add origin git@github.com:tony-nguyen1/tony-nguyen.github.io.git
-            git push -u origin main
+            git push -u origin main --force
             
         # - name: Deploy to GitHub Pages
         #   uses: JamesIves/github-pages-deploy-action@releases/v4
