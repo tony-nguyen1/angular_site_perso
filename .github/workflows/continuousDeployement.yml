@@ -52,13 +52,18 @@ jobs:
             cd ../
             ls
             
-        - name: Deploy to GitHub Pages
-          uses: JamesIves/github-pages-deploy-action@releases/v4
-          with:
-            token: ${{ secrets.GITHUB_TOKEN }}
-            branch: main
-            folder: my_website
-            repository-name: tony-nguyen1/tony-nguyen1.github.io
-            git-config-name: beep-boop
-            commit-message: "automatic deployment"
-            single-commit: true 
+        # - name: Deploy to GitHub Pages
+        #   uses: JamesIves/github-pages-deploy-action@releases/v4
+        #   with:
+        #     token: ${{ secrets.GITHUB_TOKEN }}
+        #     branch: main
+        #     folder: my_website
+        #     repository-name: tony-nguyen1/tony-nguyen1.github.io
+        #     git-config-name: beep-boop
+        #     commit-message: "automatic deployment"
+        #     single-commit: true 
+        - name: Pushes to another repository
+          uses: cpina/github-action-push-to-another-repository@main
+          env:
+          # SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+            API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
