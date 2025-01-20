@@ -54,10 +54,10 @@ jobs:
           run: |
             pwd
             ls
-            echo "Changing directory"
-            cd ./my_website
-            pwd
-            ls
+            # echo "Changing directory"
+            # cd ./my_website
+            # pwd
+            # ls
             echo "Setting git identity"
             git config --global user.name "Mr.Beep-Boop"
             git config --global user.email "nguyentoony@gmail.com"
@@ -73,7 +73,7 @@ jobs:
 
         - name: Adding all files
           run : |
-            cd ./my_website
+            # cd ./my_website
             git status
             git add .
             git status
