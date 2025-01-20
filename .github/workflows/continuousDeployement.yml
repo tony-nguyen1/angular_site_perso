@@ -82,5 +82,5 @@ jobs:
 
         - name: Pushing
           run : |
-            cd my_website
+            # cd my_website
             git push -u deploy_site main --force
