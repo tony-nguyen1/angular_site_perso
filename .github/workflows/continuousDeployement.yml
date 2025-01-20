@@ -16,71 +16,80 @@ jobs:
     steps:
     
     - uses: actions/checkout@v3
-    
-    - name: Building website
+
+    - name: Installing angular on the runner
       run : |
         npm -g install -g @angular/cli
         npm install
-        ng build --optimization --output-path docs #--base-href /tony-nguyen1.github.io/
-        cp -v docs/index.html docs/404.html
-        ls -R docs/
-
-    - name: Saving the output
-      uses: actions/upload-artifact@v1
-      with:
-        name: my_website
-        path: docs/
+    - name: Building website with Angular
+      run : |
+        git checkout -b gh-pages
+        ng build --optimization --output-path docs --base-href /angular_site_perso/
+    - name: Creating page 404 
+      run : cp -v docs/index.html docs/404.html
+    - name: Push to gh-pages branch 
+      run : |
+        git config --global user.name "Mr.Beep-Boop"
+        git config --global user.email "nguyentoony@gmail.com"
+        git add .
+        git commit -m "deploy website"
+        git push origin gh-pages --force
+    # - name: Saving the output
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: my_website
+    #     path: docs/
        
         
-  deploy:
+  # deploy:
   
-    runs-on: ubuntu-latest
+  #   runs-on: ubuntu-latest
     
-    needs: build
+  #   needs: build
    
-    steps:
+  #   steps:
 
-        - name: Download build
-          uses: actions/download-artifact@v1
-          with:
-            name: my_website
+  #       - name: Download build
+  #         uses: actions/download-artifact@v4
+  #         with:
+  #           name: my_website
 
-        - name: Adding ssh-key
-          uses: webfactory/ssh-agent@v0.7.0
-          with:
-            ssh-private-key: ${{ secrets.SSH_DEPLOY_KEY }}
+        # - name: Adding ssh-key
+        #   uses: webfactory/ssh-agent@v0.7.0
+        #   with:
+        #     ssh-private-key: ${{ secrets.SSH_DEPLOY_KEY }}
 
-        - name: Initialize git repository
-          run: |
-            pwd
-            ls
-            echo "Changing directory"
-            cd ./my_website
-            pwd
-            ls
-            echo "Setting git identity"
-            git config --global user.name "Mr.Beep-Boop"
-            git config --global user.email "nguyentoony@gmail.com"
-            git config --global init.defaultBranch main
-            git config --list
-            echo "Initialazing repository"
-            git init
-            # git branch -M main
-            git remote add deploy_site git@github.com:tony-nguyen1/tony-nguyen1.github.io.git
-            git remote -v
-            echo "ssh-agent:"
-            eval "$(ssh-agent -s)"
+        # - name: Initialize git repository
+        #   run: |
+        #     pwd
+        #     ls
+        #     # echo "Changing directory"
+        #     # cd ./my_website
+        #     # pwd
+        #     # ls
+        #     echo "Setting git identity"
+        #     git config --global user.name "Mr.Beep-Boop"
+        #     git config --global user.email "nguyentoony@gmail.com"
+        #     git config --global init.defaultBranch main
+        #     git config --list
+        #     echo "Initialazing repository"
+        #     git init
+        #     # git branch -M main
+        #     git remote add deploy_site git@github.com:tony-nguyen1/tony-nguyen1.github.io.git
+        #     git remote -v
+        #     echo "ssh-agent:"
+        #     eval "$(ssh-agent -s)"
 
-        - name: Adding all files
-          run : |
-            cd ./my_website
-            git status
-            git add .
-            git status
-            git commit -m "deploy"
-            git status
+        # - name: Adding all files
+        #   run : |
+        #     # cd ./my_website
+        #     git status
+        #     git add .
+        #     git status
+        #     git commit -m "deploy"
+        #     git status
 
-        - name: Pushing
-          run : |
-            cd my_website
-            git push -u deploy_site main --force
+        # - name: Pushing
+        #   run : |
+        #     # cd my_website
+        #     git push -u deploy_site main --force

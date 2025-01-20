@@ -35,3 +35,5 @@ Puis aller dans Settings > Pages. Ensuite changer /root en /docs dans Branches.
 https://stackoverflow.com/questions/63862046/angular-get-404-after-reload-with-github-page
 
 ng build --optimization --output-path docs && git status && git add . && git commit -m "style contact portefolio mobile screen" && git push origin main && git push deploy main
+
+ng build --output-path docs --base-href /angular_site_perso/
